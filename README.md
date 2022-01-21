@@ -11,5 +11,5 @@ The ajax community is claiming that this is "graded alarms that meet internation
 
 The trouble is that ajax alarm is a very closed source-api and everything else. No integrations, neither with apple homekit, alexa, google home, NOTHING.
 
-My idea was inspired by another project which i followed on http://romor.github.io/blind-control/ so the idea is to use the GPIO interface of a Raspberry PI to manually press arm or disarm on the remote and connect some module that will listen to iOS or Android geolocation (or remote call).
+My idea was inspired by another project which i followed on https://github.com/romor/blind-control so the idea is to use the GPIO interface of a Raspberry PI to manually press arm or disarm on the remote and connect some module that will listen to iOS or Android geolocation (or remote call).
 
