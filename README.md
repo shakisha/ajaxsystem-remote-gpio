@@ -13,11 +13,10 @@ The trouble is that ajax alarm is a very closed source-api and everything else. 
 
 My idea was inspired by another project which i followed on https://github.com/romor/blind-control so the idea is to use the GPIO interface of a Raspberry PI to manually press arm or disarm on the remote and connect some module that will listen to iOS or Android geolocation (or remote call).
 
-
-08/08/2022 - I have accomplished the task. 
-
+STEPS:
 First of all you have to solder arm and disarm button from a spacecontrol, and plug it on raspberry gpio 17 and 27.
-Then you can remove spacecontrol battery and solder + and - and connect to 3,3v and gnd of raspberry.
+Then you can remove spacecontrol battery and solder + and - and connect to 3,3v and gnd of raspberry. 
+(so at the end you should have 4 solder points from remote to the raspberry pi)
 
 The arm and disarm script are contained in this repository.
 
@@ -30,3 +29,7 @@ In my scenario i'm not using disarming, only arming.
 For additional security you can temporary desactivate the spacecontrol remote from the ajax app itself, only in case you are lefting home and you want additional layer of security, but for day-by-day this is a GENIAL solution to avoid unwanted alarm arming being forgotten.
 
 All kinda of contribution are welcome!
+
+
+(please, give me a star if you enjoyed the contribution)
+
