@@ -19,46 +19,14 @@ My idea was inspired by another project which i followed on https://github.com/r
 First of all you have to solder arm and disarm button from a spacecontrol, and plug it on raspberry gpio 17 and 27.
 Then you can remove spacecontrol battery and solder + and - and connect to 3,3v and gnd of raspberry.
 
-The arm script will be like this: 
+The arm and disarm script are contained in this repository.
 
-#!/usr/bin/python
-
-import RPi.GPIO as GPIO            # import RPi.GPIO module
-from time import sleep             # lets us have a delay
-GPIO.setmode(GPIO.BCM)             # choose BCM or BOARD
-GPIO.setup(17, GPIO.OUT)           # set GPIO24 as an output 
-
-try:
-        GPIO.output(17, 1)         # set GPIO24 to 1/GPIO.HIGH/True
-        sleep(0.5)                 # wait half a second
-        GPIO.output(17, 0)         # set GPIO24 to 0/GPIO.LOW/False
-        sleep(0.5)                 # wait half a second
-
-finally:
-    GPIO.cleanup()                 # resets all GPIO ports used by this program
-
-
-and the disarm script like this: 
-
-#!/usr/bin/python
-
-import RPi.GPIO as GPIO            # import RPi.GPIO module
-from time import sleep             # lets us have a delay
-GPIO.setmode(GPIO.BCM)             # choose BCM or BOARD
-GPIO.setup(27, GPIO.OUT)           # set GPIO24 as an output 
-
-try:
-        GPIO.output(27, 1)         # set GPIO24 to 1/GPIO.HIGH/True
-        sleep(0.5)                 # wait half a second
-        GPIO.output(27, 0)         # set GPIO24 to 0/GPIO.LOW/False
-        sleep(0.5)                 # wait half a second
-
-finally:
-    GPIO.cleanup()                 # resets all GPIO ports used by this program
-
-- 
+./arm.sh will arm the system
+./disarm.sh will disarm the system
 
 Then you can implement your favourite presence detection system to arm when nobody is at home. 
 In my scenario i'm not using disarming, only arming.
+
+For additional security you can temporary desactivate the spacecontrol remote from the ajax app itself, only in case you are lefting home and you want additional layer of security, but for day-by-day this is a GENIAL solution to avoid unwanted alarm arming being forgotten.
 
 All kinda of contribution are welcome!
